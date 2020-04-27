@@ -47,11 +47,15 @@ const CategoryTabs = ({ match, displayTabs, tabs, filter }) => {
   if (err) {
     return <div>Error: {Error.message} </div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <div>
+      <h3 data-testid="check-category-route">Category Sections</h3>
+      Loading...
+    </div>;
   } else {
     return (
       <div>
         <Search />
+        <h3>Category Sections</h3>
         <ul>
           {filterSel()}
         </ul>

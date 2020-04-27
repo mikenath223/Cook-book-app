@@ -12,7 +12,7 @@ const handleChange = (entry, filter) => {
 
 const Search = ({ filter }) => (
   <div>
-    <input type="search" placeholder="Search category" onChange={e => handleChange(e, filter)} />
+    <input type="search" placeholder="Search category" data-testid="entry" onChange={e => handleChange(e, filter)} />
   </div>
 )
 

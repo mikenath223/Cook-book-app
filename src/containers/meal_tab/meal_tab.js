@@ -35,14 +35,18 @@ const MealTab = ({ match, showMeal, meal }) => {
   if (err) {
     return <div>Error: {Error.message} </div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return (<div>
+      <h3 data-testid="check-meal-route">Meal Recipe</h3>
+      Loading...
+    </div>);
   } else {
     return (
       <div>
+        <h3>Meal Recipe</h3>
         <ul>
-          {meal.map(tab => <MealRecipe 
-          tab={tab} 
-          key={tab.idMeal} />)}
+          {meal.map(tab => <MealRecipe
+            tab={tab}
+            key={tab.idMeal} />)}
         </ul>
       </div>
     );

@@ -48,11 +48,15 @@ const CategoriesList = ({ showCats, cats, filter }) => {
   if (err) {
     return <div>Error: {Error.message} </div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <div>
+    <h3 data-testid="check-home-route">Categories</h3>    
+    Loading...
+    </div>;
   } else {
     return (
       <div>
         <Search />
+        <h3 data-testid="check-home-route">Categories</h3>
         <ul>
           {filterSel()}
         </ul>
