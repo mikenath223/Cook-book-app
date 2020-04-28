@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../src/styles/home.css'
+import '../src/styles/cat-Item.css'
 import '../src/styles/reset.css';
 import App from './components/app';
 

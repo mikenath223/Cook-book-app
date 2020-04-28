@@ -55,8 +55,7 @@ const CategoryTabs = ({ match, displayTabs, tabs, filter }) => {
     return (
       <div>
         <Search />
-        <h3>Category Sections</h3>
-        <ul>
+        <ul className="cat-col">
           {filterSel()}
         </ul>
       </div>
