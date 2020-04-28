@@ -8,6 +8,7 @@ const MealCat = ({ tab }) => {
         <div className="cat-img ml-n3">
           <img className="" src={tab.strMealThumb} alt="imgTab" />
         </div>
+        <img className="icon-plate" src="https://img.icons8.com/ultraviolet/48/000000/meal.png"/>
         <p className="cat-head">{tab.strMeal}</p>
       </Link>
     </li>

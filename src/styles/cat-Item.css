@@ -13,7 +13,6 @@
   border: 2px solid transparent;
   height: 400px;
   display: flex;
-  align-items: flex-end;
 }
 
 .cat-each:before {
@@ -25,7 +24,7 @@
   left: 0;
   z-index: -1;
   margin: -2px;
-  border-radius: 5px;
+  border-radius: 15px;
   border: inherit;
   background: -webkit-gradient(linear, left top, right top, from(red), to(orange));
   background: linear-gradient(to right, red, orange);
@@ -34,7 +33,8 @@
 .cat-img {
   position: absolute;
   left: -10px;
-  border-radius: 5px;
+  top: 10px;
+  border-radius: 15px;
   overflow: hidden;
   width: 80%;
   height: 70%;
@@ -46,12 +46,35 @@
 }
 
 .cat-head {
+  margin-left: 35px;
+  align-self: flex-end;
   margin-bottom: 20px;
-  margin-left: 20px;
+}
+
+.icon-plate {
+  margin-left: -30px;
+  bottom: 20px;
+  position: absolute;
+}
+
+@media (max-width: 1024px) {
+  .cat-each {
+    height: 300px;
+  }
 }
 
 @media (max-width: 900px) {
   .cat-col {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 470px) {
+  .cat-col {
+    grid-template-columns: 1fr;
+    margin: 150px 30px;
+  }
+  .cat-each {
+    height: 300px;
   }
 }
