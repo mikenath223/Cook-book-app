@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
 body {
   font-size: 18px;
   font-family: 'Poppins', sans-serif;
@@ -14,8 +15,25 @@ a {
   color: #000;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
+.home-link {
+  font-family: 'Merriweather', serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.yellow {
+  color: yellow;
+}
+
 .slideshow-container {
   position: relative;
+  margin-bottom: 50px;
 }
 
 .mySlides img {
@@ -26,6 +44,55 @@ a {
 .fade {
   -webkit-animation: fade 1.5s linear;
   animation: fade 1.5s linear;
+}
+
+.category-list {
+  display: flex;
+  width: 70%;
+  margin: auto;
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+
+.cat-list-item {
+  width: 40%;
+  padding: 10px;
+}
+
+.cat-list-head {
+  font-size: 35px;
+  font-weight: 700;
+  align-self: flex-end;
+  margin-bottom: 20px;
+  margin-left: 40px;
+  width: 30%;
+  background-color: #F6F6F6;
+  text-align: center;
+  height: 20vmax;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cat-list-head2 {
+  font-weight: initial;
+  font-size: 14px;
+  display: inline-block;
+  margin-right: 20px;
+  text-decoration: underline;
+  margin-bottom: 20px;
+  color: silver;
+}
+
+.cat-list-desc {
+  margin: 50px;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.cat-explore {
+  margin-left: 50px;
 }
 
 @-webkit-keyframes fade {
@@ -48,13 +115,16 @@ a {
 
 .slide-text {
   position: absolute;
+  bottom: 100px;
+  left: 50px;
+  font-size: 40px;
   color: #fff;
   z-index: 2;
 }
 
 .slide-text small {
   display: inline-block;
-  font-size: 10px;
+  font-size: 14px;
   margin-bottom: 5px;
   position: relative;
 }
@@ -68,9 +138,40 @@ a {
   border-top: 1px solid silver;
 }
 
+.cat-list-img {
+  height: 20vmax;
+  width: 250px;
+  background-color: silver;
+  object-position: center bottom;
+}
+
+.cat-list-img img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1030px) {
+  .category-list {
+    width: 95%;
+  }
+}
+
 @media (max-width: 800px) {
   .mySlides img {
     height: 400px;
+  }
+  .category-list {
+    flex-direction: column-reverse;
+    width: 95%;
+  }
+  .cat-list-item {
+    width: 100%;
+  }
+  .cat-list-head {
+    width: 95%;
+  }
+  .cat-list-img {
+    height: auto;
   }
 }
 
@@ -81,5 +182,8 @@ a {
   .slide-text {
     bottom: 50px;
     left: 30px;
+  }
+  .cat-list-head {
+    margin-right: 20px;
   }
 }

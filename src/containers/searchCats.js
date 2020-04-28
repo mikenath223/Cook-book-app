@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { FILTER } from '../actions';
+import { Link } from 'react-router-dom';
 
 const mapDispatchToProps = dispatch => ({
   filter: word => dispatch(FILTER(word))
@@ -12,7 +13,7 @@ const handleChange = (entry, filter) => {
 
 const Search = ({ filter }) => (
   <nav className="navbar fixed-top navbar-dark bg-dark">
-    <a className="navbar-brand">munchIt</a>
+    <Link to={'/'}><h2 className="navbar-brand home-link"> <span className="yellow">munch</span>It</h2></Link>
     <form className="form-inline">
       <div className="input-group">
         <div className="input-group-prepend">
