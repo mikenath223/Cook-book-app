@@ -48,9 +48,9 @@ const CategoriesList = ({ showCats, cats, filter }) => {
   if (err) {
     return <div>Error: {Error.message} </div>;
   } else if (!isLoaded) {
-    return <div>
+    return <div className="">
     <h3 data-testid="check-home-route">Categories</h3>    
-    Loading...
+    <img src="https://miro.medium.com/max/978/0*cWpsf9D3g346Va20.gif"/>
     </div>;
   } else {
     return (
