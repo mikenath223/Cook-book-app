@@ -65,10 +65,10 @@ const MealTab = ({ match, showMeal, meal }) => {
 
 MealTab.propTypes = {
   showMeal: PropTypes.func.isRequired,
-  meal: PropTypes.string.isRequired,
+  meal: PropTypes.arrayOf(PropTypes.object).isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
-      dish: PropTypes.string.isRequired,
+      dish: PropTypes.string,
     }),
   }).isRequired,
 };
