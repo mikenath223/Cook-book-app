@@ -1,3 +1,16 @@
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+
+<p align="center">
+  <a href="https://www.ruby-lang.org/en/">
+    <img src="https://img.shields.io/badge/React-v16.3.1-brightgreen.svg" alt="ruby version">
+    <img src="https://img.shields.io/badge/Redux-v4.0.5-brightgreen.svg" alt="ruby version">
+  </a>
+</p>
+
 ### CookBook
 
 A meals recipe app built with the React and Redux frameworks. It showcases meals accoring to their categories and each meal contains instructions on how to prepare also included is a Youtube video.
