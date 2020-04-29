@@ -5,6 +5,6 @@ const filterTabs = (state = '', action) => {
     default:
       return state;
   }
-}
+};
 
 export default filterTabs;

@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from '../reducers/index'
-import { render, cleanup } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react';
+import rootReducer from '../reducers/index';
 import Error from '../containers/404/error-page';
 import App from '../components/app';
 
@@ -11,8 +11,8 @@ import App from '../components/app';
 afterEach(cleanup);
 const div = document.createElement('div');
 const store = createStore(rootReducer);
-const reduxRendering = component => ({
-  ...render(<Provider store={store}>{component}</Provider>)
+const reduxRendering = (component) => ({
+  ...render(<Provider store={store}>{component}</Provider>),
 });
 
 
@@ -20,8 +20,8 @@ test('landing page rendering or navigation', () => {
   const { getByTestId } = reduxRendering(
     <MemoryRouter>
       <App />
-    </MemoryRouter>, div
-  )
+    </MemoryRouter>, div,
+  );
 
   expect(getByTestId('check-home-route').textContent).toBe('Categories');
 });
@@ -30,7 +30,7 @@ test('making a bad 404 route request', () => {
   const { getByTestId } = reduxRendering(
     <MemoryRouter>
       <Error />
-    </MemoryRouter>, div
+    </MemoryRouter>, div,
   );
 
   expect(getByTestId('check-error-route').textContent).toBe('404 Error');

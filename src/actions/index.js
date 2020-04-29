@@ -1,26 +1,28 @@
-const SHOWCATEGORIES = cats => ({
+const SHOWCATEGORIES = (cats) => ({
   type: 'SHOW CATEGORIES',
-  cats
+  cats,
 });
 
-const FILTER = str => ({
+const FILTER = (str) => ({
   type: 'CHANGE FILTER',
-  str
+  str,
 });
 
-const DISPLAYTABS = tabs => ({
+const DISPLAYTABS = (tabs) => ({
   type: 'DISPLAY TABS',
-  tabs
+  tabs,
 });
 
-const FILTERTABS = str => ({
+const FILTERTABS = (str) => ({
   type: 'CHANGE TAB',
-  str
+  str,
 });
 
-const SHOWMEAL = meal => ({
+const SHOWMEAL = (meal) => ({
   type: 'SHOW MEAL',
-  meal
+  meal,
 });
 
-export { SHOWCATEGORIES, FILTER, DISPLAYTABS, FILTERTABS, SHOWMEAL }
+export {
+  SHOWCATEGORIES, FILTER, DISPLAYTABS, FILTERTABS, SHOWMEAL,
+};

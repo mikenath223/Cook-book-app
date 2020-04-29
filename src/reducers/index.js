@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
   filterCat,
   category,
   filterTabs,
-  mealTab
-})
+  mealTab,
+});
 
 export default rootReducer;

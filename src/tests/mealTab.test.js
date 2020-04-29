@@ -14,17 +14,17 @@ const div = document.createElement('div');
 it('renders correct component', () => {
   reduxRendering(
     <MemoryRouter>
-      <MealTab match={match}/>
-    </MemoryRouter>, div
-  )
+      <MealTab match={match} />
+    </MemoryRouter>, div,
+  );
 });
 
 it('the component has the right input', () => {
   const { getByTestId } = reduxRendering(
     <MemoryRouter>
-      <MealTab match={match}/>
+      <MealTab match={match} />
     </MemoryRouter>,
   );
 
   expect(getByTestId('check-meal-route')).toHaveTextContent('Meal Recipe');
-})
+});

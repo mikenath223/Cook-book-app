@@ -5,6 +5,6 @@ const filterCat = (state = '', action) => {
     default:
       return state;
   }
-}
+};
 
 export default filterCat;

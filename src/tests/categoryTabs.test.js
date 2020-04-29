@@ -14,17 +14,17 @@ const div = document.createElement('div');
 it('renders correct component', () => {
   reduxRendering(
     <MemoryRouter>
-      <CategoryTabs match={match}/>
-    </MemoryRouter>, div
-  )
+      <CategoryTabs match={match} />
+    </MemoryRouter>, div,
+  );
 });
 
 it('the component has the right input', () => {
   const { getByTestId } = reduxRendering(
     <MemoryRouter>
-      <CategoryTabs match={match}/>
+      <CategoryTabs match={match} />
     </MemoryRouter>,
   );
 
   expect(getByTestId('check-category-route')).toHaveTextContent('Category Section');
-})
+});
