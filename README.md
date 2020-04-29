@@ -150,13 +150,13 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/mikenath223/React-Calculator.svg?style=flat-square
-[contributors-url]: https://github.com/mikenath223/React-Calculator/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/mikenath223/React-Calculator
-[forks-url]: https://github.com/mikenath223/React-Calculator/network/members
-[stars-shield]: https://img.shields.io/github/stars/mikenath223/React-Calculator
-[stars-url]: https://github.com/mikenath223/React-Calculator/stargazers
-[issues-shield]: https://img.shields.io/github/issues/mikenath223/React-Calculator
-[issues-url]: https://github.com/mikenath223/React-Calculator/issues
-[license-shield]: https://img.shields.io/github/license/mikenath223/React-Calculator
-[license-url]: https://github.com/mikenath223/React-Calculator/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/mikenath223/Cook-book-app.svg?style=flat-square
+[contributors-url]: https://github.com/mikenath223/Cook-book-app/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/mikenath223/Cook-book-app
+[forks-url]: https://github.com/mikenath223/Cook-book-app/network/members
+[stars-shield]: https://img.shields.io/github/stars/mikenath223/Cook-book-app
+[stars-url]: https://github.com/mikenath223/Cook-book-app/stargazers
+[issues-shield]: https://img.shields.io/github/issues/mikenath223/Cook-book-app
+[issues-url]: https://github.com/mikenath223/Cook-book-app/issues
+[license-shield]: https://img.shields.io/github/license/mikenath223/Cook-book-app
+[license-url]: https://github.com/mikenath223/Cook-book-app/blob/master/LICENSE.txt
