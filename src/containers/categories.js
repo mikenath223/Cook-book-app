@@ -77,12 +77,6 @@ const CategoriesList = ({ showCats, cats, filter }) => {
         <div className="mySlides fade1">
           <img src="https://lovogallery.com/wp-content/uploads/2019/10/hotel_food_photography_01.jpg" alt="" />
         </div>
-        {/* <div className="mySlides fade">
-            <img src="https://pixelstrobist.com/wp-content/uploads/2017/11/autumn_food_photography_0.jpg" alt="" />
-          </div>
-          <div className="mySlides fade">
-            <img src="https://blog.yelp.com/wp-content/uploads/2017/04/Screenshot-2017-04-03-14.58.54-768x493.png" alt="" />
-          </div> */}
       </div>
       <h3 data-testid="check-home-route">Categories</h3>
       <ul>

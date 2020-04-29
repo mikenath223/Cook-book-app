@@ -17,12 +17,15 @@ const MealRecipe = ({ tab }) => (
     <div className="top-head">
       <h1 className="bg-dark text-light meal-intro p-3">Meal Recipe</h1>
       <div className="vid-wrap">
+        <a className="rounded bg-danger text-light p-2 tags mb-3" href={tab.strYoutube}>YOUTUBE Link</a>
         <object className="youtube-vid">
           <param name="movie" value={`http://www.youtube.com/v/${tab.strYoutube.split('=')[1]}?version=3`} />
           <param name="allowFullScreen" value="true" />
           <param name="allowScriptAccess" value="always" />
         </object>
         <p className="badge badge-pill bg-danger text-light p-2 tags">{tab.strTags}</p>
+        {' '}
+        <br />
       </div>
 
       <div className="meal-thumb">

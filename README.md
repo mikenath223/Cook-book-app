@@ -60,7 +60,9 @@ A meals recipe app built with the React and Redux frameworks. It showcases meals
 <!-- LIVE PREVIEW -->
 
 ## LIVE PREVIEW
+* Here is a link to the live version of the app - https://muunchit.herokuapp.com/
 
+* You can watch a live demostration of the project using this link - https://www.loom.com/share/2296d8cf689548d0ad0babc6096c8f70
 <!-- REQUIRED INSTALLATION -->
 
 ## REQUIRED INSTALLATIONS
@@ -74,7 +76,7 @@ A meals recipe app built with the React and Redux frameworks. It showcases meals
 Clone the Repository,
 
 ```Shell
-your@pc:~$ git clone git@github.com:Tripple-A/CovInfo.git
+your@pc:~$ git clone https://github.com/mikenath223/Cook-book-app.git
 ```
 
 Go to the downloaded folder

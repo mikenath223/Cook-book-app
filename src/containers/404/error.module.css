@@ -1,0 +1,32 @@
+.image {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  position: relative;
+  height: 99vh;
+  background: -webkit-gradient(linear, left top, right top, from(#4D42E8), to(#3E9EFD));
+  background: linear-gradient(to right, #4D42E8, #3E9EFD);
+}
+
+.h1 {
+  display: none;
+}
+
+.homeBut {
+  display: block;
+  width: 30%;
+  margin: auto;
+  text-align: center;
+}
+
+.button {
+  width: 100%;
+  background-color: #4D42E8;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 900;
+  height: 50px;
+  border-radius: 20px;
+}
