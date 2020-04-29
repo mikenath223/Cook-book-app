@@ -55,9 +55,9 @@ const CategoriesList = ({ showCats, cats, filter }) => {
     );
   } if (!isLoaded) {
     return (
-      <div>
+      <div className="container">
         <h3 data-testid="check-home-route">Categories</h3>
-        <img src="https://miro.medium.com/max/978/0*cWpsf9D3g346Va20.gif" alt="" />
+        <img className="err-img" src="https://miro.medium.com/max/978/0*cWpsf9D3g346Va20.gif" alt="" />
       </div>
     );
   }

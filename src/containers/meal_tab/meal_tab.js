@@ -42,9 +42,9 @@ const MealTab = ({ match, showMeal, meal }) => {
     );
   } if (!isLoaded) {
     return (
-      <div>
+      <div className="container">
         <h3 data-testid="check-meal-route">Meal Recipe</h3>
-        Loading...
+        <img className="err-img" src="https://miro.medium.com/max/978/0*cWpsf9D3g346Va20.gif" alt="" />
       </div>
     );
   }

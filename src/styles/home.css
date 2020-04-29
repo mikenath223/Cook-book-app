@@ -75,6 +75,20 @@ a:hover {
   flex-direction: column;
 }
 
+.container {
+  width: 99vw;
+  height: 99vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.err-img {
+  max-width: 100%;
+  height: auto;
+}
+
 .cat-list-head2 {
   font-weight: initial;
   font-size: 14px;
