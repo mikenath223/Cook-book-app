@@ -74,7 +74,7 @@ const CategoryTabs = ({
 CategoryTabs.propTypes = {
   displayTabs: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
-  tabs: PropTypes.string.isRequired,
+  tabs: PropTypes.arrayOf(PropTypes.object).isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
       name: PropTypes.string.isRequired,

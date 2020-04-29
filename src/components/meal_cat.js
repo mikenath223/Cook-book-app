@@ -16,7 +16,6 @@ const MealCat = ({ tab }) => (
 
 MealCat.propTypes = {
   tab: PropTypes.shape({
-    tab: PropTypes.string.isRequired,
     strMeal: PropTypes.string.isRequired,
     idMeal: PropTypes.string.isRequired,
     strMealThumb: PropTypes.string.isRequired,

@@ -28,7 +28,6 @@ const ListCat = ({ cat }) => (
 
 ListCat.propTypes = {
   cat: PropTypes.shape({
-    country: PropTypes.string.isRequired,
     strCategory: PropTypes.string.isRequired,
     idCategory: PropTypes.string.isRequired,
     strCategoryDescription: PropTypes.string.isRequired,
