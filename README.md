@@ -1,45 +1,110 @@
 ### CookBook
 
-- A meals recipe app built with the React and Redux frameworks.
+A meals recipe app built with the React and Redux frameworks. It showcases meals accoring to their categories and each meal contains instructions on how to prepare also included is a Youtube video.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [User Features](#user-features)
+- [Built With](#built-with)
+- [Technologies Employed](#technologies-employed)
+- [Live Preview](#live-preview)
+- [Required Installations](#required-installations)
+- [App Installation](#instalation)
+- [Future Features](#future-features)
+- [License](#license)
+- [Author](#author)
+- [Acknowledgements](#acknowledgements)
 
-In the project directory, you can run:
+<!-- User features -->
 
-### `npm start`
+## User Features
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- A user can view all meals which are grouped by categories.
+- The user can filter search based on the meal catgeory of choice.
+- A user can navigate throught the three pages of the site:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* Category Page
+* Meal Page
+* Recipe Page
 
-### `npm test`
+<!-- BUILT WITH -->
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Built With
 
-### `npm run build`
+- VsCode
+- Windows
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- TECHNOLOGIES EMPLOYED -->
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+# Technologies Employed
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React Hooks
+- Redux Store
+- React Routers
+- Jest auto watch
+- Css Modules
 
-### `npm run eject`
+<!-- LIVE PREVIEW -->
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## LIVE PREVIEW
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- REQUIRED INSTALLATION -->
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## REQUIRED INSTALLATIONS
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- npm
+
+<!-- INSTALLATION -->
+
+## Installation of This Repository
+
+Clone the Repository,
+
+```Shell
+your@pc:~$ git clone git@github.com:Tripple-A/CovInfo.git
+```
+
+Go to the downloaded folder
+
+```Shell
+your@pc:~$ cd Cook-book-app/
+```
+
+Install all packages
+
+```Shell
+your@pc:~$ npm install
+```
+
+Start the server
+
+```Shell
+your@pc:~$ npm start
+```
+
+The app will open on your local host port 3000.
+
+<!-- run tests -->
+
+## Run tests
+
+Run all tests
+
+```Shell
+your@pc:~$ npm test
+```
+
+Run specific tests
+
+```Shell
+your@pc:~$ npm test src/tests/<testfile>
+```
+
+<!-- Future features -->
+
+## Future Features
+
+- Do more work on the front-end section of the project.
 
 ## Learn More
 
@@ -47,26 +112,36 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+# Authors
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+**Michgolden Ukeje**
 
-### Analyzing the Bundle Size
+- Github: [@mikenath223](https://github.com/mikenath223)
+- Twitter: [@Michgolden_Nath](https://twitter.com/MichgoldenU)
+- Linkedin: [Ukeje Michgolden](https://https://www.linkedin.com/in/michgoldenukeje/)
+  <br />
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+# License
 
-### Making a Progressive Web App
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+<!-- ACKNOWLEDGEMENTS -->
 
-### Advanced Configuration
+## Acknowledgements
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- [Microverse](https://www.microverse.org/)
+- [The Odin Project](https://www.theodinproject.com/)
 
-### Deployment
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[contributors-shield]: https://img.shields.io/github/contributors/mikenath223/React-Calculator.svg?style=flat-square
+[contributors-url]: https://github.com/mikenath223/React-Calculator/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/mikenath223/React-Calculator
+[forks-url]: https://github.com/mikenath223/React-Calculator/network/members
+[stars-shield]: https://img.shields.io/github/stars/mikenath223/React-Calculator
+[stars-url]: https://github.com/mikenath223/React-Calculator/stargazers
+[issues-shield]: https://img.shields.io/github/issues/mikenath223/React-Calculator
+[issues-url]: https://github.com/mikenath223/React-Calculator/issues
+[license-shield]: https://img.shields.io/github/license/mikenath223/React-Calculator
+[license-url]: https://github.com/mikenath223/React-Calculator/blob/master/LICENSE.txt
