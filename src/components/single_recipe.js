@@ -69,7 +69,6 @@ const MealRecipe = ({ tab }) => (
 
 MealRecipe.propTypes = {
   tab: PropTypes.shape({
-    tab: PropTypes.string.isRequired,
     idMeal: PropTypes.string.isRequired,
     strMeal: PropTypes.string.isRequired,
     strMealThumb: PropTypes.string.isRequired,

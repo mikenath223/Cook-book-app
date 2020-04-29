@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { DISPLAYTABS } from '../../actions/index';
 import MealCat from '../../components/meal_cat';
 import Search from './searchTabs';
+import Error from '../404/error-page';
 
 
 const mapDispatchToProps = dispatch => ({
@@ -27,7 +28,11 @@ const CategoryTabs = ({
       .then(
         reslt => {
           setIsLoaded(true);
-          displayTabs(reslt.meals);
+          if (!reslt.meals) {
+            setErr(true);
+          } else {
+            displayTabs(reslt.meals);
+          }
         },
 
         err => {
@@ -48,10 +53,7 @@ const CategoryTabs = ({
 
   if (err) {
     return (
-      <div>
-        Error:
-        {Error.message}
-      </div>
+      <Error />
     );
   } if (!isLoaded) {
     return (

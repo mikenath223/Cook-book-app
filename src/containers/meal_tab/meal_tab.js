@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { SHOWMEAL } from '../../actions/index';
 import MealRecipe from '../../components/single_recipe';
-
+import Error from '../404/error-page';
 
 const mapDispatchToProps = dispatch => ({
   showMeal: meal => dispatch(SHOWMEAL(meal)),
@@ -23,7 +23,11 @@ const MealTab = ({ match, showMeal, meal }) => {
       .then(
         reslt => {
           setIsLoaded(true);
-          showMeal(reslt.meals);
+          if (!reslt.meals) {
+            setErr(true);
+          } else {
+            showMeal(reslt.meals);
+          }
         },
 
         err => {
@@ -35,10 +39,7 @@ const MealTab = ({ match, showMeal, meal }) => {
 
   if (err) {
     return (
-      <div>
-        Error:
-        {Error.message}
-      </div>
+      <Error />
     );
   } if (!isLoaded) {
     return (
