@@ -6,8 +6,8 @@
 }
 
 .cat-each {
-  background-color: #F5F5F5;
-  border-radius: 5px;
+  background-color: rgb(231, 230, 230);
+  border-radius: 15px;
   position: relative;
   background-clip: padding-box;
   border: 2px solid transparent;
@@ -33,10 +33,11 @@
 .cat-img {
   position: absolute;
   left: -10px;
-  top: 10px;
+  top: 18px;
   border-radius: 15px;
   overflow: hidden;
-  width: 80%;
+  width: 98%;
+  height: 80%;
 }
 
 .cat-img img {
@@ -76,8 +77,5 @@
   .cat-col {
     grid-template-columns: 1fr;
     margin: 150px 30px;
-  }
-  .cat-each {
-    height: 300px;
   }
 }
