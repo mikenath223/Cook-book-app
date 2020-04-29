@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const ListCat = ({ cat }) => (
   <Link to={`category/${cat.strCategory}`}>
@@ -24,5 +25,15 @@ const ListCat = ({ cat }) => (
     </li>
   </Link>
 );
+
+ListCat.propTypes = {
+  cat: PropTypes.shape({
+    country: PropTypes.string.isRequired,
+    strCategory: PropTypes.string.isRequired,
+    idCategory: PropTypes.string.isRequired,
+    strCategoryDescription: PropTypes.string.isRequired,
+    strCategoryThumb: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default ListCat;

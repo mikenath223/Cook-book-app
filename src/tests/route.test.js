@@ -11,7 +11,7 @@ import App from '../components/app';
 afterEach(cleanup);
 const div = document.createElement('div');
 const store = createStore(rootReducer);
-const reduxRendering = (component) => ({
+const reduxRendering = component => ({
   ...render(<Provider store={store}>{component}</Provider>),
 });
 

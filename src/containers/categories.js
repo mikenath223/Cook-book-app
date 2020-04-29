@@ -6,11 +6,11 @@ import Search from './searchCats';
 import ListCat from '../components/listCat';
 
 
-const mapDispatchToProps = (dispatch) => ({
-  showCats: (cats) => dispatch(SHOWCATEGORIES(cats)),
+const mapDispatchToProps = dispatch => ({
+  showCats: cats => dispatch(SHOWCATEGORIES(cats)),
 });
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   cats: state.categories,
   filter: state.filterCat,
 });
@@ -23,14 +23,14 @@ const CategoriesList = ({ showCats, cats, filter }) => {
 
   useEffect(() => {
     fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
-      .then((res) => res.json())
+      .then(res => res.json())
       .then(
-        (reslt) => {
+        reslt => {
           setIsLoaded(true);
           showCats(reslt.categories);
         },
 
-        (err) => {
+        err => {
           setIsLoaded(true);
           setErr(err);
         },
@@ -40,10 +40,10 @@ const CategoriesList = ({ showCats, cats, filter }) => {
   const filterSel = () => {
     if (filter !== '' && filter.split('')[filter.length - 1] !== '\\') {
       const pattern = new RegExp(`^${filter}`, 'i');
-      const filtered = cats.filter((entry) => pattern.test(entry.strCategory));
-      return filtered.map((cat) => <ListCat cat={cat} key={cat.idCategory} />);
+      const filtered = cats.filter(entry => pattern.test(entry.strCategory));
+      return filtered.map(cat => <ListCat cat={cat} key={cat.idCategory} />);
     }
-    return cats.map((cat) => <ListCat cat={cat} key={cat.idCategory} />);
+    return cats.map(cat => <ListCat cat={cat} key={cat.idCategory} />);
   };
 
   if (err) {
@@ -92,5 +92,10 @@ const CategoriesList = ({ showCats, cats, filter }) => {
   );
 };
 
+CategoriesList.propTypes = {
+  showCats: PropTypes.func.isRequired,
+  cats: PropTypes.arrayOf(PropTypes.object).isRequired,
+  filter: PropTypes.string.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(CategoriesList);

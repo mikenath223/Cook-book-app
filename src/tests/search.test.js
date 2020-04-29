@@ -12,18 +12,17 @@ afterEach(cleanup);
 const div = document.createElement('div');
 const store = createStore(rootReducer);
 
-const reduxRendering = (component) => ({
+const reduxRendering = component => ({
   ...render(<Provider store={store}>{component}</Provider>),
 });
 
-const reduxRender = reduxRendering(
-  <MemoryRouter>
-    <Search />
-  </MemoryRouter>, div,
-);
 
 it('shows the search input field with redux', () => {
-  reduxRender;
+  reduxRendering(
+    <MemoryRouter>
+      <Search />
+    </MemoryRouter>, div,
+  );
 });
 
 it('checks input value', () => {

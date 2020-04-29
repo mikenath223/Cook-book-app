@@ -7,7 +7,7 @@ import App from '../components/app';
 
 
 const store = createStore(rootReducer);
-const reduxRendering = (component) => ({
+const reduxRendering = component => ({
   ...render(<Provider store={store}>{component}</Provider>),
 });
 

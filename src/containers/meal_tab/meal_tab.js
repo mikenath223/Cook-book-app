@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { SHOWMEAL } from '../../actions/index';
 import MealRecipe from '../../components/single_recipe';
 
 
-const mapDispatchToProps = (dispatch) => ({
-  showMeal: (meal) => dispatch(SHOWMEAL(meal)),
+const mapDispatchToProps = dispatch => ({
+  showMeal: meal => dispatch(SHOWMEAL(meal)),
 });
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   meal: state.mealTab,
 });
 
@@ -18,14 +19,14 @@ const MealTab = ({ match, showMeal, meal }) => {
 
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${match.params.dish}`)
-      .then((res) => res.json())
+      .then(res => res.json())
       .then(
-        (reslt) => {
+        reslt => {
           setIsLoaded(true);
           showMeal(reslt.meals);
         },
 
-        (err) => {
+        err => {
           setIsLoaded(true);
           setErr(err);
         },
@@ -51,7 +52,7 @@ const MealTab = ({ match, showMeal, meal }) => {
     <div>
       <h3>Meal Recipe</h3>
       <ul>
-        {meal.map((tab) => (
+        {meal.map(tab => (
           <MealRecipe
             tab={tab}
             key={tab.idMeal}
@@ -60,6 +61,16 @@ const MealTab = ({ match, showMeal, meal }) => {
       </ul>
     </div>
   );
+};
+
+MealTab.propTypes = {
+  showMeal: PropTypes.func.isRequired,
+  meal: PropTypes.string.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      dish: PropTypes.string.isRequired,
+    }),
+  }).isRequired,
 };
 
 
