@@ -14,6 +14,7 @@ const MealRecipe = ({ tab }) => {
         <Link to={'/'}><h2 className="navbar-brand home-link"> <span className="yellow">munch</span>It</h2></Link>
       </nav>
       <div className="top-head">
+      <h1 className="bg-dark text-light meal-intro p-3">Meal Recipe</h1>
         <div className="vid-wrap">
           <object className="youtube-vid">
             <param name="movie" value={`http://www.youtube.com/v/${tab.strYoutube.split('=')[1]}?version=3`} />
@@ -32,7 +33,7 @@ const MealRecipe = ({ tab }) => {
         </div>
       </div>
 
-      <div className="mt-3 container-fluid">
+      <div className="my-5 container-fluid cook-desc">
       <div className="mb-2 row text-light">
       <p className="bg-dark col-xl-6 col-lg-6 col-md-6 col-sm-12 px-5 p-2">Category</p>
       <p className="bg-success col-xl-6 col-lg-6 col-md-6 col-sm-12 px-5 p-2 text-warning">{tab.strCategory}</p>

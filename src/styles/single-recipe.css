@@ -1,8 +1,20 @@
 .top-head {
   display: flex;
   justify-content: space-around;
-  margin-top: 100px;
+  margin-top: 150px;
   height: 450px;
+  position: relative;
+}
+
+.meal-intro {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  font-size: 20px;
+}
+
+.cook-desc {
+  font-size: 40px;
 }
 
 .vid-wrap {
