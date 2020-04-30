@@ -56,7 +56,7 @@ const CategoryTabs = ({
         },
       );
 
-    fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Miscellaneous')
+    fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Pasta')
       .then(res => res.json())
       .then(
         reslt => {

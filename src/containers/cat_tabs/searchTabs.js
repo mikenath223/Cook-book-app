@@ -10,6 +10,10 @@ const SearchTabs = ({
     filterTabs(entry.target.value);
   };
 
+  const handleSelectCat = entry => {
+    filterTabs(entry.target.value);
+  };
+
   return (
     <nav className="navbar fixed-top navbar-dark bg-dark">
       <Link to="/">
@@ -24,7 +28,7 @@ const SearchTabs = ({
           <div className="input-group-prepend">
             <p className="input-group-text" htmlFor="inputGroupSelect01">Choose Meal Category</p>
           </div>
-          <select name="category" className="custom-select" id="inputGroupSelect01" onChange={e => onClick(e)}>
+          <select name="category" className="custom-select" id="inputGroupSelect01" onChange={e => handleSelectCat(e)}>
             <option value="All">All Category</option>
             <option value="Beef">Beef</option>
             <option value="Chicken">Chicken</option>

@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { MemoryRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import Search from '../containers/searchCats';
+import SearchTabs from '../category/searchTabs';
 import rootReducer from '../reducers/index';
 
 
@@ -16,26 +16,29 @@ const reduxRendering = component => ({
   ...render(<Provider store={store}>{component}</Provider>),
 });
 
-
-it('shows the search input field with redux', () => {
-  reduxRendering(
-    <MemoryRouter>
-      <Search />
-    </MemoryRouter>, div,
-  );
-});
-
-it('checks input value', () => {
-  const { getByTestId } = reduxRendering(
-    <MemoryRouter>
-      <Search />
-    </MemoryRouter>, div,
-  );
+const { getByTestId } = reduxRendering(
+  <MemoryRouter>
+    <SearchTabs />
+  </MemoryRouter>, div,
+);
+describe('test the search component', () => {
   const input = getByTestId('entry');
 
-  expect(input.value).toBe('');
-  input.focus();
-  expect(input).toHaveFocus();
-  input.blur();
-  expect(input).not.toHaveFocus();
-});
+  it('shows the search input field with redux', () => {
+    reduxRendering
+  });
+
+  it('checks input value', () => {
+    expect(input.value).toBe('');
+  })
+
+  it('checks input focus element', () => {
+    input.focus();
+    expect(input).toHaveFocus();
+  })
+
+  it('checks input on blur', () => {
+    input.blur();
+    expect(input).not.toHaveFocus();
+  })
+})
