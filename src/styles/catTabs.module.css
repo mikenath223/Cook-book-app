@@ -1,0 +1,13 @@
+.mealCont {
+  /* display: grid; */
+  /* grid-template-columns: 15fr 1fr; */
+}
+
+.catList {
+  position: sticky;
+  top: 20px;
+  max-width: 500px;
+  min-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
