@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 
 const SearchTabs = ({
-  filterTabs, filter, catList, onClick,
+  filterTabs, filter, catList,
 }) => {
   const handleChange = entry => {
     filterTabs(entry.target.value);
@@ -29,12 +29,15 @@ const SearchTabs = ({
             <p className="input-group-text" htmlFor="inputGroupSelect01">Choose Meal Category</p>
           </div>
           <select name="category" className="custom-select" id="inputGroupSelect01" onChange={e => handleSelectCat(e)}>
-            <option value="All">All Category</option>
+            <option value="">All Category</option>
             <option value="Beef">Beef</option>
             <option value="Chicken">Chicken</option>
             <option value="Dessert">Dessert</option>
             <option value="Lamb">Lamb</option>
-            <option value="Miscellaneous">Miscellaneous</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Starter">Starter</option>
+
           </select>
         </label>
 
@@ -52,11 +55,15 @@ const SearchTabs = ({
   );
 };
 
+SearchTabs.defaultProps = {
+  filter: '',
+  catList: '',
+};
+
 SearchTabs.propTypes = {
-  filter: PropTypes.func.isRequired,
-  filter: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  catList: PropTypes.string.isRequired,
+  filter: PropTypes.string,
+  filterTabs: PropTypes.func.isRequired,
+  catList: PropTypes.string,
 };
 
 

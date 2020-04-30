@@ -56,20 +56,38 @@ const CategoryTabs = ({
         },
       );
 
-    fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Pasta')
+    fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
       .then(res => res.json())
       .then(
         reslt => {
           reslt.meals.forEach(el => collection.push(el));
-          setIsLoaded(true);
-          displayTabs(collection);
-        },
-
-        err => {
-          setIsLoaded(true);
-          setErr(err);
         },
       );
+
+    fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegetarian')
+      .then(res => res.json())
+      .then(
+        reslt => {
+          reslt.meals.forEach(el => collection.push(el));
+        },
+      );
+
+    setTimeout(() => {
+      fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Starter')
+        .then(res => res.json())
+        .then(
+          reslt => {
+            reslt.meals.forEach(el => collection.push(el));
+            setIsLoaded(true);
+            displayTabs(collection);
+          },
+
+          err => {
+            setIsLoaded(true);
+            setErr(err);
+          },
+        );
+    }, 3000);
   }, [displayTabs, tabs.length]);
 
   const filterSel = () => {
@@ -88,7 +106,8 @@ const CategoryTabs = ({
   } if (!isLoaded) {
     return (
       <div className="container">
-        <h3 data-testid="check-category-route">Category Sections</h3>
+        <h3 data-testid="check-home-route">Categories</h3>
+        <h3 data-testid="check-category-route">Category Section</h3>
         <img className="err-img" src="https://miro.medium.com/max/978/0*cWpsf9D3g346Va20.gif" alt="" />
       </div>
     );
@@ -127,6 +146,7 @@ const CategoryTabs = ({
 CategoryTabs.propTypes = {
   displayTabs: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
+  filterTabs: PropTypes.func.isRequired,
   tabs: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
