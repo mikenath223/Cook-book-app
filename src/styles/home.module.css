@@ -19,7 +19,7 @@ a:hover {
   text-decoration: none;
 }
 
-.home-link {
+.homeLink {
   font-family: 'Merriweather', serif;
   font-weight: 800;
   font-size: 22px;
@@ -31,7 +31,7 @@ a:hover {
   color: yellow;
 }
 
-.slideshow-container {
+.slideshowContainer {
   position: relative;
   margin-bottom: 50px;
 }
@@ -84,12 +84,84 @@ a:hover {
   background: #fff;
 }
 
-.err-img {
+.catList {
+  position: sticky;
+  top: 20px;
+  max-width: 500px;
+  min-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.errImg {
   max-width: 100%;
   height: auto;
 }
 
-.cat-list-head2 {
+.catCol {
+  display: grid;
+  grid-template: auto / repeat(3, 1fr);
+  margin: 150px 100px;
+  gap: 80px;
+}
+
+.catEach {
+  background-color: rgb(231, 230, 230);
+  border-radius: 15px;
+  position: relative;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+  height: 400px;
+  display: flex;
+}
+
+.catEach:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -2px;
+  border-radius: 15px;
+  border: inherit;
+  background: -webkit-gradient(linear, left top, right top, from(red), to(orange));
+  background: linear-gradient(to right, red, orange);
+}
+
+.catImg {
+  position: absolute;
+  left: -10px;
+  top: 18px;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 98%;
+  height: 80%;
+}
+
+.catImg img {
+  height: auto;
+  max-width: 100%;
+}
+
+.catHead {
+  margin-left: 35px;
+  align-self: flex-end;
+  margin-bottom: 20px;
+  color: gray;
+  font-size: 18px;
+}
+
+.iconPlate {
+  margin-left: -20px;
+  bottom: -15px;
+  border: 3px solid orangered;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.catListHead2 {
   font-weight: initial;
   font-size: 14px;
   display: inline-block;
@@ -99,13 +171,13 @@ a:hover {
   color: silver;
 }
 
-.cat-list-desc {
+.catListDesc {
   margin: 50px;
   font-size: 15px;
   font-weight: 300;
 }
 
-.cat-explore {
+.catExplore {
   margin-left: 50px;
 }
 
@@ -127,7 +199,7 @@ a:hover {
   }
 }
 
-.slide-text {
+.slideText {
   position: absolute;
   bottom: 100px;
   left: 50px;
@@ -136,14 +208,14 @@ a:hover {
   z-index: 2;
 }
 
-.slide-text small {
+.slideText small {
   display: inline-block;
   font-size: 14px;
   margin-bottom: 5px;
   position: relative;
 }
 
-.slide-text small::after {
+.slideText small::after {
   content: '';
   position: absolute;
   width: 50px;
@@ -152,21 +224,24 @@ a:hover {
   border-top: 1px solid silver;
 }
 
-.cat-list-img {
+.catListImg {
   height: 20vmax;
   width: 250px;
   background-color: silver;
   object-position: center bottom;
 }
 
-.cat-list-img img {
+.catListImg .img {
   width: 100%;
   height: auto;
 }
 
 @media (max-width: 1030px) {
-  .category-list {
+  .categoryList {
     width: 95%;
+  }
+  .catEach {
+    height: 300px;
   }
 }
 
@@ -174,18 +249,21 @@ a:hover {
   .mySlides img {
     height: 400px;
   }
-  .category-list {
+  .categoryList {
     flex-direction: column-reverse;
     width: 95%;
   }
-  .cat-list-item {
+  .catListItem {
     width: 100%;
   }
-  .cat-list-head {
+  .catListHead {
     width: 95%;
   }
-  .cat-list-img {
+  .catListImg {
     height: auto;
+  }
+  .catCol {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -193,11 +271,15 @@ a:hover {
   .mySlides img {
     height: 300px;
   }
-  .slide-text {
+  .slideText {
     bottom: 50px;
     left: 30px;
   }
-  .cat-list-head {
+  .catListHead {
     margin-right: 20px;
+  }
+  .catCol {
+    grid-template-columns: 1fr;
+    margin: 150px 30px;
   }
 }

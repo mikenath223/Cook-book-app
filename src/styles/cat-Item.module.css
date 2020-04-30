@@ -1,11 +1,11 @@
-.cat-col {
+.catCol {
   display: grid;
   grid-template: auto / repeat(3, 1fr);
   margin: 150px 100px;
   gap: 80px;
 }
 
-.cat-each {
+.catEach {
   background-color: rgb(231, 230, 230);
   border-radius: 15px;
   position: relative;
@@ -15,7 +15,7 @@
   display: flex;
 }
 
-.cat-each:before {
+.catEach:before {
   content: '';
   position: absolute;
   top: 0;
@@ -30,7 +30,7 @@
   background: linear-gradient(to right, red, orange);
 }
 
-.cat-img {
+.catImg {
   position: absolute;
   left: -10px;
   top: 18px;
@@ -40,12 +40,12 @@
   height: 80%;
 }
 
-.cat-img img {
+.catImg img {
   height: auto;
   max-width: 100%;
 }
 
-.cat-head {
+.catHead {
   margin-left: 35px;
   align-self: flex-end;
   margin-bottom: 20px;
@@ -53,7 +53,7 @@
   font-size: 18px;
 }
 
-.icon-plate {
+.iconPlate {
   margin-left: -20px;
   bottom: -15px;
   border: 3px solid orangered;
@@ -62,19 +62,19 @@
 }
 
 @media (max-width: 1024px) {
-  .cat-each {
+  .catEach {
     height: 300px;
   }
 }
 
 @media (max-width: 900px) {
-  .cat-col {
+  .catCol {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 470px) {
-  .cat-col {
+  .catCol {
     grid-template-columns: 1fr;
     margin: 150px 30px;
   }

@@ -5,7 +5,7 @@ import { DISPLAYTABS, FILTERTABS } from '../../actions/index';
 import MealCat from '../../components/meal_cat';
 import SearchTabs from './searchTabs';
 import Error from '../404/error-page';
-import style from '../../styles/catTabs.module.css';
+import styless from '../../styles/home.module.css';
 
 const mapDispatchToProps = dispatch => ({
   displayTabs: tabs => dispatch(DISPLAYTABS(tabs)),
@@ -56,24 +56,8 @@ const CategoryTabs = ({
         },
       );
 
-    fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
-      .then(res => res.json())
-      .then(
-        reslt => {
-          reslt.meals.forEach(el => collection.push(el));
-        },
-      );
-
-    fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegetarian')
-      .then(res => res.json())
-      .then(
-        reslt => {
-          reslt.meals.forEach(el => collection.push(el));
-        },
-      );
-
     setTimeout(() => {
-      fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Starter')
+      fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
         .then(res => res.json())
         .then(
           reslt => {
@@ -105,22 +89,22 @@ const CategoryTabs = ({
     );
   } if (!isLoaded) {
     return (
-      <div className="container">
+      <div className={`${styless.container} container-fluid`}>
         <h3 data-testid="check-home-route">Categories</h3>
         <h3 data-testid="check-category-route">Category Section</h3>
-        <img className="err-img" src="https://miro.medium.com/max/978/0*cWpsf9D3g346Va20.gif" alt="" />
+        <img className={styless.errImg} src="https://miro.medium.com/max/978/0*cWpsf9D3g346Va20.gif" alt="" />
       </div>
     );
   }
   return (
     <div>
       <SearchTabs
-        catList={style.catList}
+        catList={styless.catList}
         filterTabs={filterTabs}
         filter={filter}
       />
-      <div className="slideshow-container">
-        <div className="slide-text">
+      <div className={styless.slideshowContainer}>
+        <div className={styless.slideText}>
           <small>coffee & dessert</small>
           <h2>
             EVERY DAY IS
@@ -129,13 +113,13 @@ const CategoryTabs = ({
             TASTY.
           </h2>
         </div>
-        <div className="mySlides fade1">
+        <div className={styless.mySlides}>
           <img src="https://lovogallery.com/wp-content/uploads/2019/10/hotel_food_photography_01.jpg" alt="" />
         </div>
       </div>
-      <div className={style.mealCont}>
+      <div className={styless.mealCont}>
         <h3 data-testid="check-home-route">Categories</h3>
-        <ul className="cat-col">
+        <ul className={styless.catCol}>
           {filterSel()}
         </ul>
       </div>

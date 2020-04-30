@@ -1,4 +1,4 @@
-.top-head {
+.topHead {
   display: flex;
   justify-content: space-around;
   margin-top: 150px;
@@ -6,27 +6,27 @@
   position: relative;
 }
 
-.meal-intro {
+.mealIntro {
   position: absolute;
   top: -70px;
   left: 50%;
   font-size: 22px;
 }
 
-.cook-desc {
+.cookDesc {
   font-size: 30px;
 }
 
-.vid-wrap {
+.vidWrap {
   width: 45%;
 }
 
-.youtube-vid {
+.youtubeVid {
   width: 100%;
   height: 400px;
 }
 
-.meal-thumb {
+.mealThumb {
   width: 45%;
   position: relative;
   display: flex;
@@ -35,7 +35,7 @@
   height: 400px;
 }
 
-.meal-thumb::before {
+.mealThumb::before {
   position: absolute;
   content: '';
   z-index: -3;
@@ -47,12 +47,12 @@
   background-color: rgb(255, 196, 0);
 }
 
-.meal-pic {
+.mealPic {
   max-width: auto;
   height: 90%;
 }
 
-.meal-info {
+.mealInfo {
   font-size: 17px;
   position: absolute;
   left: 90px;
@@ -67,41 +67,41 @@
 }
 
 @media (max-width: 1030px) {
-  .meal-thumb {
+  .mealThumb {
     padding-right: 0;
   }
-  .meal-thumb::before {
+  .mealThumb::before {
     width: 90%;
     left: 20px;
   }
-  .vid-wrap, .meal-thumb {
+  .vidWrap, .mealThumb {
     width: 40%;
     height: 350px;
   }
-  .youtube-vid {
+  .youtubeVid {
     height: 350px;
   }
-  .meal-info {
+  .mealInfo {
     left: -30px;
   }
 }
 
 @media (max-width: 800px) {
-  .meal-thumb::before {
+  .mealThumb::before {
     width: 90%;
     left: -20px;
   }
 }
 
 @media (max-width: 450px) {
-  .top-head {
+  .topHead {
     margin-top: 20px;
     height: 850px;
     justify-content: center;
     flex-direction: column-reverse;
   }
-  .vid-wrap,
-  .meal-thumb {
+  .vidWrap,
+  .mealThumb {
     width: 85%;
     margin: auto;
     height: 300px;
@@ -109,15 +109,15 @@
   .youtube-vid {
     height: 300px;
   }
-  .meal-thumb {
+  .mealThumb {
     margin-bottom: 50px;
     justify-content: center;
   }
-  .meal-thumb::before {
+  .mealThumb::before {
     width: 80%;
     left: 10px;
   }
-  .meal-info {
+  .mealInfo {
     left: -20px;
     font-size: 15px;
     height: 32px;

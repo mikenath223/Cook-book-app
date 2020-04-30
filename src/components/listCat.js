@@ -1,21 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import style from '../styles/home.module.css';
 
 const ListCat = ({ cat }) => (
   <Link to={`category/${cat.strCategory}`}>
-    <li className="category-list" key={cat.idCategory}>
-      <div className="cat-list-item">
-        <p className="cat-list-desc">{cat.strCategoryDescription}</p>
-        <p className="cat-explore p-2 badge badge-warning">EXPLORE MORE</p>
+    <li className={style.categoryList} key={cat.idCategory}>
+      <div className={style.catListItem}>
+        <p className={style.catListDesc}>{cat.strCategoryDescription}</p>
+        <p className={`${style.catExplore} p-2 badge badge-warning`}>EXPLORE MORE</p>
       </div>
-      <div className="cat-list-img">
-        <img src={cat.strCategoryThumb} alt="imgCat" />
+      <div className={style.catListImg}>
+        <img className={style.img} src={cat.strCategoryThumb} alt="imgCat" />
       </div>
-      <div className="cat-list-head">
+      <div className={style.catListHead}>
         <p>
           {' '}
-          <small className="cat-list-head2">Recipe category</small>
+          <small className={style.catListHead2}>Recipe category</small>
           {' '}
           <br />
           {' '}

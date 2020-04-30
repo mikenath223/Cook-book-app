@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
+import stylesss from '../../styles/home.module.css';
 
 const SearchTabs = ({
   filterTabs, filter, catList,
@@ -17,26 +17,23 @@ const SearchTabs = ({
   return (
     <nav className="navbar fixed-top navbar-dark bg-dark">
       <Link to="/">
-        <h2 className="navbar-brand home-link">
+        <h2 className={`${stylesss.homeLink} navbar-brand`}>
           {' '}
-          <span className="yellow">munch</span>
+          <span className={stylesss.yellow}>munch</span>
           It
         </h2>
       </Link>
       <form className="form-inline">
         <label className={`${catList} input-group mx-3`} htmlFor="category">
           <div className="input-group-prepend">
-            <p className="input-group-text" htmlFor="inputGroupSelect01">Choose Meal Category</p>
+            <p className="input-group-text" htmlFor="inputGroupSelect01">Meal Category</p>
           </div>
-          <select name="category" className="custom-select" id="inputGroupSelect01" onChange={e => handleSelectCat(e)}>
+          <select name="category" value={filter} className="custom-select" id="inputGroupSelect01" onChange={e => handleSelectCat(e)}>
             <option value="">All Category</option>
             <option value="Beef">Beef</option>
             <option value="Chicken">Chicken</option>
-            <option value="Dessert">Dessert</option>
             <option value="Lamb">Lamb</option>
-            <option value="Vegetarian">Vegetarian</option>
             <option value="Seafood">Seafood</option>
-            <option value="Starter">Starter</option>
 
           </select>
         </label>

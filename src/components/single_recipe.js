@@ -1,32 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import style from '../styles/single-recipe.module.css';
+import styles from '../styles/home.module.css';
 
 
 const MealRecipe = ({ tab }) => (
   <li key={tab.idMeal}>
     <nav className="navbar fixed-top navbar-dark bg-dark">
       <Link to="/">
-        <h2 className="navbar-brand home-link">
+        <h2 className={`${styles.homeLink} navbar-brand`}>
           {' '}
-          <span className="yellow">munch</span>
+          <span className={styles.yellow}>munch</span>
           It
         </h2>
       </Link>
     </nav>
-    <div className="top-head">
-      <h1 className="bg-dark text-light meal-intro p-3">Meal Recipe</h1>
-      <div className="vid-wrap">
-        <a className="rounded bg-danger text-light p-2 tags mb-3" href={tab.strYoutube}>YOUTUBE Link</a>
-        <iframe title="youtube-vid" className="youtube-vid" width="560" height="315" src={`https://www.youtube.com/embed/${tab.strYoutube.split('=')[1]}`} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-        <p className="badge badge-pill bg-danger text-light p-2 tags">{tab.strTags}</p>
+    <div className={style.topHead}>
+      <h1 className={`${style.mealIntro} bg-dark text-light p-3`}>Meal Recipe</h1>
+      <div className={style.vidWrap}>
+        <a className={`${style.tags} rounded bg-danger text-light p-2 mb-3`} href={tab.strYoutube}>YOUTUBE Link</a>
+        <iframe title="youtube-vid" className={style.youtubeVid} width="560" height="315" src={`https://www.youtube.com/embed/${tab.strYoutube.split('=')[1]}`} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+        <p className={`${style.tags} badge badge-pill bg-danger text-light p-2`}>{tab.strTags}</p>
         {' '}
         <br />
       </div>
 
-      <div className="meal-thumb">
-        <img src={tab.strMealThumb} className="meal-pic" alt="imgTab" />
-        <p className="badge badge-success p-2 meal-info">
+      <div className={style.mealThumb}>
+        <img src={tab.strMealThumb} className={style.mealPic} alt="imgTab" />
+        <p className={`${style.mealInfo} badge badge-success p-2`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
@@ -46,7 +48,7 @@ const MealRecipe = ({ tab }) => (
       </div>
     </div>
 
-    <div className="my-5 container-fluid cook-desc">
+    <div className={`${style.cookDesc} my-5 container-fluid`}>
       <div className="mb-2 row text-light">
         <p className="bg-dark col-xl-6 col-lg-6 col-md-6 col-sm-12 px-5 p-2">Category</p>
         <p className="bg-success col-xl-6 col-lg-6 col-md-6 col-sm-12 px-5 p-2 text-warning">{tab.strCategory}</p>
@@ -63,17 +65,30 @@ const MealRecipe = ({ tab }) => (
   </li>
 );
 
+MealRecipe.defaultProps = {
+  tab: PropTypes.shape({
+    idMeal: '',
+    strMeal: '',
+    strMealThumb: '',
+    strTags: '',
+    strCategory: '',
+    strArea: '',
+    strInstructions: '',
+    strYoutube: '',
+  }),
+};
+
 MealRecipe.propTypes = {
   tab: PropTypes.shape({
-    idMeal: PropTypes.string.isRequired,
-    strMeal: PropTypes.string.isRequired,
-    strMealThumb: PropTypes.string.isRequired,
-    strTags: PropTypes.string.isRequired,
-    strCategory: PropTypes.string.isRequired,
-    strArea: PropTypes.string.isRequired,
-    strInstructions: PropTypes.string.isRequired,
-    strYoutube: PropTypes.string.isRequired,
-  }).isRequired,
+    idMeal: PropTypes.string,
+    strMeal: PropTypes.string,
+    strMealThumb: PropTypes.string,
+    strTags: PropTypes.string,
+    strCategory: PropTypes.string,
+    strArea: PropTypes.string,
+    strInstructions: PropTypes.string,
+    strYoutube: PropTypes.string,
+  }),
 };
 
 

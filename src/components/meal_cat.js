@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import style from '../styles/cat-Item.module.css';
 
 const MealCat = ({ tab }) => (
   <li key={tab.idMeal} className="container-fluid">
-    <Link className="cat-each row mb-5" to={`/meal/${tab.strMeal}`}>
-      <div className="cat-img ml-n3">
+    <Link className={`${style.catEach} row mb-5`} to={`/meal/${tab.strMeal}`}>
+      <div className={`${style.catImg} ml-n3`}>
         <img className="" src={tab.strMealThumb} alt="imgTab" />
       </div>
-      <img className="icon-plate" src="https://img.icons8.com/ultraviolet/48/000000/meal.png" alt=".." />
-      <p className="cat-head">{tab.strMeal}</p>
+      <img className={style.iconPlate} src="https://img.icons8.com/ultraviolet/48/000000/meal.png" alt=".." />
+      <p className={style.catHead}>{tab.strMeal}</p>
     </Link>
   </li>
 );
