@@ -83,6 +83,14 @@ const CategoryTabs = ({
     return tabs.map(tab => <MealCat tab={tab} key={tab.idMeal} />);
   };
 
+  const handleChange = entry => {
+    filterTabs(entry.target.value);
+  };
+
+  const handleSelectCat = entry => {
+    filterTabs(entry.target.value);
+  };
+
   if (err) {
     return (
       <Error />
@@ -100,8 +108,8 @@ const CategoryTabs = ({
     <div>
       <SearchTabs
         catList={styless.catList}
-        filterTabs={filterTabs}
-        filter={filter}
+        handleChange={handleChange}
+        handleSelectCat={handleSelectCat}
       />
       <div className={styless.slideshowContainer}>
         <div className={styless.slideText}>
