@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import stylesss from '../../styles/home.module.css';
 
 const SearchTabs = ({
-  filter, catList, handleChange, handleSelectCat,
+  filterTabs, filter, catList,
 }) => (
   <nav className="navbar fixed-top navbar-dark bg-dark">
     <Link to="/" className="navbar-brand">
@@ -20,7 +20,7 @@ const SearchTabs = ({
         <div className="input-group-prepend">
           <p className="input-group-text" htmlFor="inputGroupSelect01">Meal Category</p>
         </div>
-        <select name="category" value={filter} className="custom-select" id="inputGroupSelect01" onChange={e => handleSelectCat(e)}>
+        <select name="category" value={filter} className="custom-select" id="inputGroupSelect01" onChange={e => filterTabs(e.target.value)}>
           <option value="">All Category</option>
           <option value="Beef">Beef</option>
           <option value="Chicken">Chicken</option>
@@ -37,7 +37,7 @@ const SearchTabs = ({
             <img src="https://img.icons8.com/metro/16/000000/search.png" alt="" />
           </span>
         </div>
-        <input type="search" value={filter} className="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1" data-testid="entry" onChange={e => handleChange(e)} />
+        <input type="search" value={filter} className="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1" data-testid="entry" onChange={e => filterTabs(e.target.value)} />
       </div>
     </form>
   </nav>
@@ -50,9 +50,8 @@ SearchTabs.defaultProps = {
 
 SearchTabs.propTypes = {
   filter: PropTypes.string,
+  filterTabs: PropTypes.func.isRequired,
   catList: PropTypes.string,
-  handleChange: PropTypes.func.isRequired,
-  handleSelectCat: PropTypes.func.isRequired,
 };
 
 
