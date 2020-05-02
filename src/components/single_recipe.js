@@ -25,7 +25,7 @@ const MealRecipe = ({ tab }) => {
         <div className={style.vidWrap}>
           <a className={`${style.tags} rounded bg-danger text-light p-2 mb-3`} href={tab.strYoutube}>YOUTUBE Link</a>
           <iframe title="youtube-vid" className={style.youtubeVid} width="560" height="315" src={`https://www.youtube.com/embed/${tab.strYoutube.split('=')[1]}`} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-          <p className={`${style.tags} badge badge-pill bg-danger text-light p-2`}>{tab.strTags}</p>
+          <p className={`${style.tags} badge badge-pill bg-danger text-light p-2`}>{(tab.strTags).split(',').join(', ')}</p>
           {' '}
           <br />
         </div>

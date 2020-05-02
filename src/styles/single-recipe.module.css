@@ -81,6 +81,7 @@
   top: 40%;
   display: flex;
   align-items: center;
+  word-spacing: 2px;
 }
 
 .tags {
@@ -117,8 +118,8 @@
 
 @media (max-width: 450px) {
   .topHead {
-    margin-top: 20px;
-    height: 850px;
+    margin-top: 120px;
+    height: 720px;
     justify-content: center;
     flex-direction: column-reverse;
   }
@@ -128,7 +129,6 @@
   .vidWrap, .mealThumb {
     width: 85%;
     margin: auto;
-    height: 300px;
   }
   .youtube-vid {
     height: 300px;
@@ -136,14 +136,22 @@
   .mealThumb {
     margin-bottom: 50px;
     justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    height: 250px;
   }
   .mealThumb::before {
     width: 80%;
-    left: 10px;
+    left: -20px;
+    top: -10px;
+    height: 110%;
   }
   .mealInfo {
-    left: -20px;
-    font-size: 15px;
-    height: 32px;
+    word-spacing: 2px;
+    font-size: 12px;
+  }
+  .tags {
+    word-spacing: 2px;
+    font-size: 11px;
   }
 }

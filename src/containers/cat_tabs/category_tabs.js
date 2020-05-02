@@ -6,6 +6,7 @@ import MealCat from '../../components/meal_cat';
 import SearchTabs from './searchTabs';
 import Error from '../404/error-page';
 import styless from '../../styles/home.module.css';
+/* eslint consistent-return: "off" */
 
 const mapDispatchToProps = dispatch => ({
   displayTabs: tabs => dispatch(DISPLAYTABS(tabs)),
@@ -48,6 +49,10 @@ const CategoryTabs = ({
         setIsLoaded(true);
         setErr(true);
       });
+    if (tabs.length > 0) {
+      return setIsLoaded(true);
+    }
+    return setIsLoaded(false);
   }, [displayTabs, tabs.length]);
 
   const filterSel = () => {
