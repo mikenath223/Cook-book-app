@@ -10,7 +10,7 @@
   position: absolute;
   top: -70px;
   width: 200px;
-  left: calc(50% - (150/2)px);
+  left: calc(50% - (200px/2));
   font-size: 22px;
   text-align: center;
 }
