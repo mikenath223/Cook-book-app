@@ -46,34 +46,13 @@ a:hover {
   animation: fade 1.5s linear;
 }
 
-.category-list {
-  display: flex;
-  width: 70%;
-  margin: auto;
-  background-color: #fff;
-  padding-bottom: 20px;
+.catCol {
+  display: grid;
+  grid-template: auto / repeat(3, 1fr);
+  margin: 150px 100px;
+  gap: 80px;
 }
 
-.cat-list-item {
-  width: 40%;
-  padding: 10px;
-}
-
-.cat-list-head {
-  font-size: 35px;
-  font-weight: 700;
-  align-self: flex-end;
-  margin-bottom: 20px;
-  margin-left: 40px;
-  width: 30%;
-  background-color: #F6F6F6;
-  text-align: center;
-  height: 20vmax;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
 
 .container {
   width: 99vw;
@@ -82,103 +61,6 @@ a:hover {
   justify-content: center;
   align-items: center;
   background: #fff;
-}
-
-.catList {
-  position: sticky;
-  top: 20px;
-  max-width: 500px;
-  min-width: 300px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.errImg {
-  max-width: 100%;
-  height: auto;
-}
-
-.catCol {
-  display: grid;
-  grid-template: auto / repeat(3, 1fr);
-  margin: 150px 100px;
-  gap: 80px;
-}
-
-.catEach {
-  background-color: rgb(231, 230, 230);
-  border-radius: 15px;
-  position: relative;
-  background-clip: padding-box;
-  border: 2px solid transparent;
-  height: 400px;
-  display: flex;
-}
-
-.catEach:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  margin: -2px;
-  border-radius: 15px;
-  border: inherit;
-  background: -webkit-gradient(linear, left top, right top, from(red), to(orange));
-  background: linear-gradient(to right, red, orange);
-}
-
-.catImg {
-  position: absolute;
-  left: -10px;
-  top: 18px;
-  border-radius: 15px;
-  overflow: hidden;
-  width: 98%;
-  height: 80%;
-}
-
-.catImg img {
-  height: auto;
-  max-width: 100%;
-}
-
-.catHead {
-  margin-left: 35px;
-  align-self: flex-end;
-  margin-bottom: 20px;
-  color: gray;
-  font-size: 18px;
-}
-
-.iconPlate {
-  margin-left: -20px;
-  bottom: -15px;
-  border: 3px solid orangered;
-  border-radius: 50%;
-  position: absolute;
-}
-
-.catListHead2 {
-  font-weight: initial;
-  font-size: 14px;
-  display: inline-block;
-  margin-right: 20px;
-  text-decoration: underline;
-  margin-bottom: 20px;
-  color: silver;
-}
-
-.catListDesc {
-  margin: 50px;
-  font-size: 15px;
-  font-weight: 300;
-}
-
-.catExplore {
-  margin-left: 50px;
 }
 
 @-webkit-keyframes fade {
@@ -206,6 +88,8 @@ a:hover {
   font-size: 40px;
   color: #fff;
   z-index: 2;
+  padding: 5px;
+  background-color: rgba(128, 128, 128, 0.473);
 }
 
 .slideText small {
@@ -224,24 +108,9 @@ a:hover {
   border-top: 1px solid silver;
 }
 
-.catListImg {
-  height: 20vmax;
-  width: 250px;
-  background-color: silver;
-  object-position: center bottom;
-}
-
-.catListImg .img {
-  width: 100%;
-  height: auto;
-}
-
 @media (max-width: 1030px) {
   .categoryList {
     width: 95%;
-  }
-  .catEach {
-    height: 300px;
   }
 }
 
@@ -249,34 +118,25 @@ a:hover {
   .mySlides img {
     height: 400px;
   }
-  .categoryList {
-    flex-direction: column-reverse;
-    width: 95%;
-  }
-  .catListItem {
-    width: 100%;
-  }
-  .catListHead {
-    width: 95%;
-  }
-  .catListImg {
-    height: auto;
-  }
   .catCol {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 450px) {
+  .margin {
+    margin-top: 10px;
+  }  
+  .slideshowContainer {
+    top: 100px;
+  }
   .mySlides img {
     height: 300px;
   }
   .slideText {
     bottom: 50px;
     left: 30px;
-  }
-  .catListHead {
-    margin-right: 20px;
+    font-size: 30px;
   }
   .catCol {
     grid-template-columns: 1fr;

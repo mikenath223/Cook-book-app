@@ -24,54 +24,30 @@ const CategoryTabs = ({
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const collection = [];
-    fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef')
-      .then(res => res.json())
-      .then(
-        reslt => {
-          reslt.meals.forEach(el => collection.push(el));
-        },
-      );
-    fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken')
-      .then(res => res.json())
-      .then(
-        reslt => {
-          reslt.meals.forEach(el => collection.push(el));
-        },
-      );
+    const urls = [
+      'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood',
+      'https://www.themealdb.com/api/json/v1/1/filter.php?c=Lamb',
+      'https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert',
+      'https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken',
+      'https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef',
+    ];
+    let promises = [];
+    promises = urls.map(url => fetch(url).catch(e => e));
 
-    fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert')
-      .then(res => res.json())
-      .then(
-        reslt => {
-          reslt.meals.forEach(el => collection.push(el));
-        },
-      );
-
-    fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Lamb')
-      .then(res => res.json())
-      .then(
-        reslt => {
-          reslt.meals.forEach(el => collection.push(el));
-        },
-      );
-
-    setTimeout(() => {
-      fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
-        .then(res => res.json())
-        .then(
-          reslt => {
-            reslt.meals.forEach(el => collection.push(el));
-            setIsLoaded(true);
-            displayTabs(collection);
-          },
-
-          err => {
-            setIsLoaded(true);
-            setErr(err);
-          },
-        );
-    }, 3000);
+    const container = [];
+    Promise.all(promises)
+      .then(data => {
+        data.forEach(el => el.json().then(res => {
+          container.push(...(res.meals));
+        }));
+        setTimeout(() => {
+          displayTabs(container);
+          setIsLoaded(true);
+        }, 3000);
+      }).catch(() => {
+        setIsLoaded(true);
+        setErr(true);
+      });
   }, [displayTabs, tabs.length]);
 
   const filterSel = () => {

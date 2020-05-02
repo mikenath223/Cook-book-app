@@ -30,7 +30,7 @@ const SearchTabs = ({
         </select>
       </label>
 
-      <div className="input-group">
+      <div className={`${stylesss.margin} input-group`}>
         <div className="input-group-prepend">
           <span className="input-group-text" id="basic-addon1">
             {' '}
