@@ -46,11 +46,12 @@ const SearchTabs = ({
 SearchTabs.defaultProps = {
   filter: '',
   catList: '',
+  filterTabs: () => {},
 };
 
 SearchTabs.propTypes = {
   filter: PropTypes.string,
-  filterTabs: PropTypes.func.isRequired,
+  filterTabs: PropTypes.func,
   catList: PropTypes.string,
 };
 
