@@ -5,13 +5,13 @@ import style from '../styles/home.module.css';
 
 const ListCat = ({ cat }) => (
   <Link to={`category/${cat.strCategory}`}>
-    <li className={style.categoryList} key={cat.idCategory}>
+    <li className={style.categoryList} key={cat.idCategory || ''}>
       <div className={style.catListItem}>
-        <p className={style.catListDesc}>{cat.strCategoryDescription}</p>
+        <p className={style.catListDesc}>{cat.strCategoryDescription || ''}</p>
         <p className={`${style.catExplore} p-2 badge badge-warning`}>EXPLORE MORE</p>
       </div>
       <div className={style.catListImg}>
-        <img className={style.img} src={cat.strCategoryThumb} alt="imgCat" />
+        <img className={style.img} src={cat.strCategoryThumb || ''} alt="imgCat" />
       </div>
       <div className={style.catListHead}>
         <p>
@@ -20,7 +20,7 @@ const ListCat = ({ cat }) => (
           {' '}
           <br />
           {' '}
-          {cat.strCategory}
+          {cat.strCategory || ''}
         </p>
       </div>
     </li>

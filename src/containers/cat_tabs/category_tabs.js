@@ -57,7 +57,7 @@ const CategoryTabs = ({
 
   const filterSel = () => {
     if (filter !== '' && filter.split('')[filter.length - 1] !== '\\') {
-      const pattern = new RegExp(`^${filter}`, 'i');
+      const pattern = new RegExp(`${filter}`, 'ig');
       const filtered = tabs.filter(entry => pattern.test(entry.strMeal));
       return filtered.map(tab => <MealCat tab={tab} key={tab.idMeal} />);
     }
