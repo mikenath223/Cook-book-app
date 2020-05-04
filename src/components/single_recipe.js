@@ -8,9 +8,25 @@ import styles from '../styles/home.module.css';
 const MealRecipe = ({ tab }) => {
   const objKeys = Object.keys(tab);
   const ingredients = objKeys.filter(el => el.slice(0, 13) === 'strIngredient');
+  const strInstructions = (tab.strInstructions).split(/\.\s/).map(el => (<li key={el} className={style.listIns}>{
+    el + '.'
+  }</li>));
+  const checkDoubleRender = () => {
+    const lists = document.querySelectorAll('.mainList');
+    if (lists && lists.length >= 2) {
+      lists.forEach((el, i) => {
+        if (i > 0) {
+          el.parentElement.removeChild(el);
+        }
+      });
+    }
+  }
+  setTimeout(() => {
+    checkDoubleRender()
+  }, 2000)
 
   return (
-    <li key={tab.idMeal || ''}>
+    <li key={tab.idMeal || ''} className="mainList">
       <nav className="navbar fixed-top navbar-dark bg-dark">
         <Link to="/">
           <h2 className={`${styles.homeLink} navbar-brand`}>
@@ -31,8 +47,8 @@ const MealRecipe = ({ tab }) => {
               width="560"
               height="315"
               src={
-            `https://www.youtube.com/embed/${tab.strYoutube.split('=')[1]}`
-}
+                `https://www.youtube.com/embed/${tab.strYoutube.split('=')[1]}`
+              }
               frameBorder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -81,26 +97,26 @@ const MealRecipe = ({ tab }) => {
             </span>
             {' '}
             <br />
-            <p className={`${style.cookIns} rounded text-light p-4 mt-2`}>
+            <ul className={`${style.cookIns} rounded text-light p-4 mt-2`}>
               {' '}
-              {tab.strInstructions || ''}
-            </p>
+              {strInstructions || ''}
+            </ul>
           </div>
           <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
             <p className="badge badge-pill badge-warning p-3 my-3">Ingredients</p>
             <ul className={`${style.listCont} p-2 mx-2 text-white`}>
               {
-              ingredients.map(el => (
-                tab[el] ? (
-                  <li
-                    key={el}
-                    className={style.list}
-                  >
-                    {tab[el]}
-                  </li>
-                ) : null
-              ))
-            }
+                ingredients.map(el => (
+                  tab[el] ? (
+                    <li
+                      key={el}
+                      className={style.list}
+                    >
+                      {tab[el]}
+                    </li>
+                  ) : null
+                ))
+              }
             </ul>
           </div>
         </div>

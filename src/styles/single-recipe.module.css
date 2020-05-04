@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-around;
   margin-top: 150px;
-  height: 450px;
   position: relative;
 }
 
@@ -32,6 +31,10 @@
 
 .list {
   list-style: georgian inside url("https://img.icons8.com/color/33/000000/chili-pepper.png");
+}
+
+.listIns {
+  list-style: georgian inside url("https://img.icons8.com/nolan/33/--cauldron.png");
 }
 
 .listCont {
@@ -99,7 +102,6 @@
   }
   .vidWrap, .mealThumb {
     width: 40%;
-    height: 350px;
   }
   .youtubeVid {
     height: 350px;
@@ -116,10 +118,9 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 780px) {
   .topHead {
     margin-top: 120px;
-    height: 720px;
     justify-content: center;
     flex-direction: column-reverse;
   }
@@ -134,11 +135,12 @@
     height: 300px;
   }
   .mealThumb {
+    margin-top: 50px;
     margin-bottom: 50px;
     justify-content: center;
     flex-direction: column;
     width: 70%;
-    height: 250px;
+    height: 310px;
   }
   .mealThumb::before {
     width: 80%;
