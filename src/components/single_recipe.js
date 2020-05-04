@@ -8,9 +8,13 @@ import styles from '../styles/home.module.css';
 const MealRecipe = ({ tab }) => {
   const objKeys = Object.keys(tab);
   const ingredients = objKeys.filter(el => el.slice(0, 13) === 'strIngredient');
-  const strInstructions = (tab.strInstructions).split(/\.\s/).map(el => (<li key={el} className={style.listIns}>{
-    el + '.'
-  }</li>));
+  const strInstructions = (tab.strInstructions).split(/\.\s/).map(el => (
+    <li key={el} className={style.listIns}>
+      {
+    `${el}.`
+  }
+    </li>
+  ));
   const checkDoubleRender = () => {
     const lists = document.querySelectorAll('.mainList');
     if (lists && lists.length >= 2) {
@@ -20,10 +24,10 @@ const MealRecipe = ({ tab }) => {
         }
       });
     }
-  }
+  };
   setTimeout(() => {
-    checkDoubleRender()
-  }, 2000)
+    checkDoubleRender();
+  }, 0);
 
   return (
     <li key={tab.idMeal || ''} className="mainList">
