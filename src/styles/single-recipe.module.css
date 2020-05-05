@@ -1,0 +1,159 @@
+.topHead {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 150px;
+  position: relative;
+}
+
+.mealIntro {
+  position: absolute;
+  top: -70px;
+  width: 200px;
+  left: calc(50% - (200px/2));
+  font-size: 22px;
+  text-align: center;
+}
+
+.cookDesc {
+  font-size: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
+}
+
+.cookIns {
+  font-size: 20px;
+  word-spacing: 5px;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+  border: 2px solid gray;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.list {
+  list-style: georgian inside url("https://img.icons8.com/color/33/000000/chili-pepper.png");
+}
+
+.listIns {
+  list-style: georgian inside url("https://img.icons8.com/nolan/33/--cauldron.png");
+}
+
+.listCont {
+  border: 2px solid orangered;
+  box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.2);
+}
+
+.vidWrap {
+  width: 45%;
+}
+
+.youtubeVid {
+  width: 100%;
+  height: 400px;
+}
+
+.mealThumb {
+  width: 45%;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 130px;
+  height: 400px;
+}
+
+.mealThumb::before {
+  position: absolute;
+  content: '';
+  z-index: -3;
+  top: 10px;
+  height: 100%;
+  width: 45%;
+  border-radius: 25px;
+  left: 150px;
+  background-color: rgb(255, 196, 0);
+}
+
+.mealPic {
+  max-width: auto;
+  height: 90%;
+}
+
+.mealInfo {
+  font-size: 17px;
+  position: absolute;
+  left: 90px;
+  top: 40%;
+  display: flex;
+  align-items: center;
+  word-spacing: 2px;
+}
+
+.tags {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+@media (max-width: 1030px) {
+  .mealThumb {
+    padding-right: 0;
+  }
+  .mealThumb::before {
+    width: 90%;
+    left: 20px;
+  }
+  .vidWrap, .mealThumb {
+    width: 40%;
+  }
+  .youtubeVid {
+    height: 350px;
+  }
+  .mealInfo {
+    left: -30px;
+  }
+}
+
+@media (max-width: 800px) {
+  .mealThumb::before {
+    width: 90%;
+    left: -20px;
+  }
+}
+
+@media (max-width: 780px) {
+  .topHead {
+    margin-top: 120px;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+  .cookDesc {
+    font-size: 20px;
+  }
+  .vidWrap, .mealThumb {
+    width: 85%;
+    margin: auto;
+  }
+  .youtube-vid {
+    height: 300px;
+  }
+  .mealThumb {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    height: 310px;
+  }
+  .mealThumb::before {
+    width: 80%;
+    left: -20px;
+    top: -10px;
+    height: 110%;
+  }
+  .mealInfo {
+    word-spacing: 2px;
+    font-size: 12px;
+  }
+  .tags {
+    word-spacing: 2px;
+    font-size: 11px;
+  }
+}

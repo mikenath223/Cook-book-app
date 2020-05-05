@@ -1,0 +1,76 @@
+.catCol {
+  display: grid;
+  grid-template: auto / repeat(3, 1fr);
+  margin: 150px 100px;
+  gap: 80px;
+}
+
+.catEach {
+  background-color: rgb(231, 230, 230);
+  border-radius: 15px;
+  position: relative;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+  height: 400px;
+  display: flex;
+  margin: auto;
+  box-shadow: 2px 2px 20px -2px gray;
+}
+
+.catEach:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -2px;
+  border-radius: 15px;
+  border: inherit;
+  background: -webkit-gradient(linear, left top, right top, from(red), to(orange));
+  background: linear-gradient(to right, red, orange);
+}
+
+.catImg {
+  position: absolute;
+  left: -10px;
+  top: 18px;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 98%;
+  height: 80%;
+}
+
+.catImg img {
+  height: auto;
+  max-width: 100%;
+}
+
+.catHead {
+  margin-left: 35px;
+  align-self: flex-end;
+  margin-bottom: 20px;
+  color: gray;
+  font-size: 18px;
+}
+
+.iconPlate {
+  margin-left: -20px;
+  bottom: -15px;
+  border: 3px solid orangered;
+  border-radius: 50%;
+  position: absolute;
+}
+
+@media (max-width: 1024px) {
+  .catEach {
+    height: 300px;
+  }
+}
+
+@media (max-width: 430px) {
+  .catEach {
+    width: 220px;
+  }
+}
