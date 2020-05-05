@@ -40,6 +40,7 @@ A meals recipe app built with the React and Redux frameworks. It showcases meals
 * Meal Page
 * Recipe Page
 
+<img src="src/screenshot/munchit.gif"/>
 <!-- BUILT WITH -->
 
 # Built With
