@@ -1,4 +1,4 @@
-const mealTab = (state = [], action) => {
+const mealTab = (state = {}, action) => {
   switch (action.type) {
     case 'SHOW MEAL':
       return action.meal;

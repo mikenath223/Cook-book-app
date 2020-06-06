@@ -25,30 +25,27 @@ const CategoryTabs = ({
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const urls = [
-      'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood',
-      'https://www.themealdb.com/api/json/v1/1/filter.php?c=Lamb',
-      'https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert',
-      'https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken',
-      'https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef',
-    ];
-    let promises = [];
-    promises = urls.map(url => fetch(url).catch(e => e));
-
-    const container = [];
-    Promise.all(promises)
-      .then(data => {
-        data.forEach(el => el.json().then(res => {
-          container.push(...(res.meals));
-        }));
-        setTimeout(() => {
-          displayTabs(container);
+    fetch('https://muunchapi.herokuapp.com/api/mealsgroups')
+    .then(res => res.json())
+    .then(
+      reslt => {
+        if (!reslt) {
           setIsLoaded(true);
-        }, 3000);
-      }).catch(() => {
+          setErr(true);
+        } else {
+          setTimeout(() => {
+            displayTabs(reslt);
+            setIsLoaded(true);
+          }, 1200);
+        }
+      },
+
+      err => {
         setIsLoaded(true);
-        setErr(true);
-      });
+        setErr(err);
+      },
+    );
+
     if (tabs.length > 0) {
       return setIsLoaded(true);
     }
@@ -59,9 +56,9 @@ const CategoryTabs = ({
     if (filter !== '' && filter.split('')[filter.length - 1] !== '\\') {
       const pattern = new RegExp(`${filter}`, 'ig');
       const filtered = tabs.filter(entry => pattern.test(entry.strMeal));
-      return filtered.map(tab => <MealCat tab={tab} key={tab.idMeal} />);
+      return filtered.map(tab => <MealCat tab={tab} key={tab.id} />);
     }
-    return tabs.map(tab => <MealCat tab={tab} key={tab.idMeal} />);
+    return tabs.map(tab => <MealCat tab={tab} key={tab.id} />);
   };
 
   if (err) {
