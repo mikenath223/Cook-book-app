@@ -56,7 +56,7 @@ A meals recipe app built with the React and Redux frameworks. It showcases meals
 - Redux Store
 - React Routers
 - Jest auto watch
-- Css Modules
+- CSS Modules
 
 <!-- LIVE PREVIEW -->
 
