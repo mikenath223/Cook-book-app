@@ -6,6 +6,7 @@ import MealCat from '../../components/meal_cat';
 import SearchTabs from './searchTabs';
 import Error from '../404/error-page';
 import styless from '../../styles/home.module.css';
+import homeImage from "../../asset/Restaurant-Instagram-Photography.png";
 /* eslint consistent-return: "off" */
 
 const mapDispatchToProps = dispatch => ({
@@ -25,30 +26,27 @@ const CategoryTabs = ({
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const urls = [
-      'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood',
-      'https://www.themealdb.com/api/json/v1/1/filter.php?c=Lamb',
-      'https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert',
-      'https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken',
-      'https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef',
-    ];
-    let promises = [];
-    promises = urls.map(url => fetch(url).catch(e => e));
-
-    const container = [];
-    Promise.all(promises)
-      .then(data => {
-        data.forEach(el => el.json().then(res => {
-          container.push(...(res.meals));
-        }));
-        setTimeout(() => {
-          displayTabs(container);
+    fetch('https://muunchapi.herokuapp.com/api/mealsgroups')
+    .then(res => res.json())
+    .then(
+      reslt => {
+        if (!reslt) {
           setIsLoaded(true);
-        }, 3000);
-      }).catch(() => {
+          setErr(true);
+        } else {
+          setTimeout(() => {
+            displayTabs(reslt);
+            setIsLoaded(true);
+          }, 1200);
+        }
+      },
+
+      err => {
         setIsLoaded(true);
-        setErr(true);
-      });
+        setErr(err);
+      },
+    );
+
     if (tabs.length > 0) {
       return setIsLoaded(true);
     }
@@ -59,9 +57,9 @@ const CategoryTabs = ({
     if (filter !== '' && filter.split('')[filter.length - 1] !== '\\') {
       const pattern = new RegExp(`${filter}`, 'ig');
       const filtered = tabs.filter(entry => pattern.test(entry.strMeal));
-      return filtered.map(tab => <MealCat tab={tab} key={tab.idMeal} />);
+      return filtered.map(tab => <MealCat tab={tab} key={tab.id} />);
     }
-    return tabs.map(tab => <MealCat tab={tab} key={tab.idMeal} />);
+    return tabs.map(tab => <MealCat tab={tab} key={tab.id} />);
   };
 
   if (err) {
@@ -95,7 +93,7 @@ const CategoryTabs = ({
           </h2>
         </div>
         <div className={styless.mySlides}>
-          <img src="https://lovogallery.com/wp-content/uploads/2019/10/hotel_food_photography_01.jpg" alt="" />
+          <img src={homeImage} alt="" />
         </div>
       </div>
       <div className={styless.mealCont}>

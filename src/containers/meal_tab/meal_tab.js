@@ -19,17 +19,24 @@ const MealTab = ({ match, showMeal, meal }) => {
   const [err, setErr] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
+
   useEffect(() => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${match.params.dish}`)
+    const dish = match.params.dish;
+    fetch('https://muunchapi.herokuapp.com/api/getdish', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        strMeal: dish
+      }),
+    })
       .then(res => res.json())
       .then(
         reslt => {
+          showMeal(reslt);
           setIsLoaded(true);
-          if (!reslt.meals) {
-            setErr(true);
-          } else {
-            showMeal(reslt.meals);
-          }
         },
 
         err => {
@@ -37,7 +44,7 @@ const MealTab = ({ match, showMeal, meal }) => {
           setErr(err);
         },
       );
-  }, [match, showMeal, meal.length]);
+  }, [match, showMeal]);
 
   if (err) {
     return (
@@ -55,12 +62,12 @@ const MealTab = ({ match, showMeal, meal }) => {
     <div>
       <h3>Meal Recipe</h3>
       <ul>
-        {meal.map(tab => (
+        {
           <MealRecipe
-            tab={tab}
-            key={tab.idMeal}
+            meal={meal}
+            key={meal.id}
           />
-        ))}
+        }
       </ul>
     </div>
   );
@@ -68,7 +75,7 @@ const MealTab = ({ match, showMeal, meal }) => {
 
 MealTab.propTypes = {
   showMeal: PropTypes.func.isRequired,
-  meal: PropTypes.arrayOf(PropTypes.object).isRequired,
+  meal: PropTypes.object.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
       dish: PropTypes.string,

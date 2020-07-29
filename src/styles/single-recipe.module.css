@@ -139,7 +139,7 @@
     margin-bottom: 50px;
     justify-content: center;
     flex-direction: column;
-    width: 70%;
+    width: 50%;
     height: 310px;
   }
   .mealThumb::before {
@@ -155,5 +155,11 @@
   .tags {
     word-spacing: 2px;
     font-size: 11px;
+  }
+}
+
+@media (max-width: 490px) {
+  .mealThumb {
+    width: 80%;
   }
 }
