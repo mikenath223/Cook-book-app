@@ -6,6 +6,7 @@ import MealCat from '../../components/meal_cat';
 import SearchTabs from './searchTabs';
 import Error from '../404/error-page';
 import styless from '../../styles/home.module.css';
+import homeImage from "../../asset/Restaurant-Instagram-Photography.png";
 /* eslint consistent-return: "off" */
 
 const mapDispatchToProps = dispatch => ({
@@ -92,7 +93,7 @@ const CategoryTabs = ({
           </h2>
         </div>
         <div className={styless.mySlides}>
-          <img src="https://lovogallery.com/wp-content/uploads/2019/10/hotel_food_photography_01.jpg" alt="" />
+          <img src={homeImage} alt="" />
         </div>
       </div>
       <div className={styless.mealCont}>
