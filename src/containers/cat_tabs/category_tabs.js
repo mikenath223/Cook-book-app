@@ -37,7 +37,7 @@ const CategoryTabs = ({
           setTimeout(() => {
             displayTabs(reslt);
             setIsLoaded(true);
-          }, 1200);
+          }, 1100);
         }
       },
 
